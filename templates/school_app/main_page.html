@@ -1,0 +1,18 @@
+<head>
+    <link rel="stylesheet" href="/static/css/main_page.css">
+    <title>Мої Резюме</title>
+</head>
+<body>
+    <div class="main_container">
+        <p>Hello World</p>
+        {%for post in posts%}
+            <div class="post_container">
+                <p>{{post.creator}}</p>
+                {% if post.pict %}
+                    <img src="{{ post.pict.url }}" alt="img">
+                {% endif %}
+                <p>{{post.text}}</p>
+            </div>
+        {%endfor%}
+    </div>
+</body>
