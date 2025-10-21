@@ -7,6 +7,7 @@ class Post(models.Model):
     title = models.CharField(max_length=128)
     text = models.TextField()
     pict = models.ImageField(upload_to="picts/" ,blank=True)
+    date = models.DateField(null=True)
     
     def __str__(self):
         return f"{self.title}"

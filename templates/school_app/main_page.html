@@ -1,18 +1,30 @@
+{% extends 'base.html'%}
+{% block content %}
 <head>
-    <link rel="stylesheet" href="/static/css/main_page.css">
-    <title>Мої Резюме</title>
+    <title>Головна сторінка</title>
 </head>
 <body>
+    <aside> <!-- Боковая панель (сайдбар) -->
+        <nav> <!-- Дополнительное меню страницы -->
+            <ul>
+                <li><a href="/month-1/">місяць 1</a></li>
+                <li><a href="/month-2/">місяць 2</a></li>
+                <li><a href="/month-3/">місяць 3</a></li>
+                <li><a href="/month-3/">місяць 3</a></li>
+            </ul>
+        </nav>
+    </aside>
     <div class="main_container">
         <p>Hello World</p>
-        {%for post in posts%}
+        {% for post in posts %}
             <div class="post_container">
-                <p>{{post.creator}}</p>
+                <p>{{post.title}}</p>
                 {% if post.pict %}
                     <img src="{{ post.pict.url }}" alt="img">
                 {% endif %}
                 <p>{{post.text}}</p>
             </div>
-        {%endfor%}
+        {% endfor %}
     </div>
 </body>
+{% endblock %}

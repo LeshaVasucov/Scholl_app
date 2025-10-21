@@ -1,9 +1,6 @@
 body {
-    background-color:rgba(122, 133, 255, 0.1)
-}
-body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color:rgba(122, 133, 255, 0.1);
     margin: 0;
     padding: 20px;
 }
@@ -28,8 +25,21 @@ body {
 }
 
 .post_container img {
-    max-width: 300px;   /* максимальная ширина */
-    height: auto;       /* пропорции сохраняются */
-    display: block;     /* чтобы убрать лишние отступы */
-    margin-top: 10px;   /* немного от текста */
+    max-width: 300px; 
+    height: auto;     
+    display: block;   
+    margin-top: 10px;  
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #000000;
+    margin-top: 40px;
+}
+
+aside {
+    float: left;
+    width: 10%; 
+    margin-top: 0;
 }
