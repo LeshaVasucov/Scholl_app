@@ -4,27 +4,32 @@
     <title>Головна сторінка</title>
 </head>
 <body>
-    <aside> <!-- Боковая панель (сайдбар) -->
-        <nav> <!-- Дополнительное меню страницы -->
+    <aside> 
+        <nav> 
             <ul>
-                <li><a href="/month-1/">місяць 1</a></li>
-                <li><a href="/month-2/">місяць 2</a></li>
-                <li><a href="/month-3/">місяць 3</a></li>
-                <li><a href="/month-3/">місяць 3</a></li>
+                <li><a href="{%url 'main_page'%}">Головна сторінка </a></li>
+                <li><a href="{%url 'month_filter'%}?month=1">Вересень 🍁</a></li>
+                <li><a href="{%url 'month_filter'%}?month=2">Жовтень 🍂</a></li>
+                <li><a href="{%url 'month_filter'%}?month=3">Листопад 🌧️</a></li>
+                <li><a href="{%url 'month_filter'%}?month=4">Грудень ❄️</a></li>
             </ul>
         </nav>
     </aside>
     <div class="main_container">
-        <p>Hello World</p>
-        {% for post in posts %}
-            <div class="post_container">
-                <p>{{post.title}}</p>
-                {% if post.pict %}
-                    <img src="{{ post.pict.url }}" alt="img">
-                {% endif %}
-                <p>{{post.text}}</p>
-            </div>
-        {% endfor %}
+        {%if posts%}
+            {% for post in posts %}
+                <div class="post_container">
+                    <p>{{post.title}}</p>
+                    {% if post.pict %}
+                        <img src="{{ post.pict.url }}" alt="img">
+                    {% endif %}
+                    <p>{{post.text}}</p>
+                    <p class="date">{{post.date}}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="warn_message">Немає публікації</p>
+        {% endif %}
     </div>
 </body>
 {% endblock %}

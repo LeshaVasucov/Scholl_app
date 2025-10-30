@@ -7,3 +7,11 @@ def PostListView(request):
         "posts" : posts,
     }
     return render(request, "school_app/main_page.html",context)
+
+def PostByMonthView(request):
+    month = request.GET.get("month")
+    posts = Post.objects.filter(month=month)
+    context = {
+        "posts" : posts,
+    }
+    return render(request, "school_app/main_page.html",context)
