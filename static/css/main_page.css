@@ -42,6 +42,7 @@ footer {
 aside {
     float: left;
     width: 10%; 
+    height: 70%;
     margin-top: 0;
     margin: 0 auto;
     background: white;
