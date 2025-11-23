@@ -59,3 +59,20 @@ aside {
 .date {
     text-align: right;
 }
+
+header {
+    min-height: 8%;
+}
+
+header .btn {
+    background: #5289ff;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+header .btn:hover {
+    background: #372fd3;
+}

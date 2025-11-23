@@ -6,6 +6,7 @@ urlpatterns = [
     path('', views.PostListView, name="main_page"),
     path('month/', views.PostByMonthView, name="month_filter"),
     path('category/', views.PostByCategoryView, name="category_filter"),
+    path("rand-post/", views.RandomPostView, name="random-post")
 ]
 
 urlpatterns += [
