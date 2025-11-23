@@ -15,3 +15,11 @@ def PostByMonthView(request):
         "posts" : posts,
     }
     return render(request, "school_app/main_page.html",context)
+
+def PostByCategoryView(request):
+    category = request.GET.get("category")
+    posts = Post.objects.filter(category=category)
+    context = {
+        "posts" : posts,
+    }
+    return render(request, "school_app/main_page.html",context)

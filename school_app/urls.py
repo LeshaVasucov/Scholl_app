@@ -5,6 +5,7 @@ from django.views.static import serve
 urlpatterns = [
     path('', views.PostListView, name="main_page"),
     path('month/', views.PostByMonthView, name="month_filter"),
+    path('category/', views.PostByCategoryView, name="category_filter"),
 ]
 
 urlpatterns += [
