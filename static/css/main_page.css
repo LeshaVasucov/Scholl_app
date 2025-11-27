@@ -62,6 +62,8 @@ aside {
 
 header {
     min-height: 8%;
+    display: flex;
+    justify-content: space-between;
 }
 
 header .btn {

@@ -3,7 +3,13 @@
 </head>
 <body>
     <header>
-        <a href="{% url 'random-post'%}" class="btn">Випадкова Публікація</a>
+        <div class="left ">
+            <a href="{% url 'random-post'%}" class="btn">Випадкова Публікація</a>
+        </div>
+        <div class="right">
+            <a href="{%url 'category_filter'%}?category=1" class="btn">Олімпіади 🏆</a>
+            <a href="{%url 'category_filter'%}?category=2" class="btn">Конкурси ⛳</a>
+        </div>
     </header>
     {% block content %}
     
