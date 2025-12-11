@@ -17,10 +17,13 @@ class Post(models.Model):
     creator = models.ForeignKey(User,on_delete=models.CASCADE, related_name="creator")
     title = models.CharField(max_length=128)
     text = models.TextField()
-    pict = models.ImageField(upload_to="picts/" ,blank=True)
     date = models.DateField(null=True)
     category = models.CharField(max_length=32, choices=CATEGORY_CHOICES)
     month = models.CharField(max_length=20, choices=MONTH_CHOICES)
     
     def __str__(self):
         return f"{self.title}"
+    
+class Picture(models.Model):
+    pict = models.ImageField(upload_to="picts/" ,blank=True)
+    post = models.ForeignKey(Post,on_delete=models.CASCADE, related_name="pictures")

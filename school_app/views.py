@@ -3,7 +3,7 @@ from school_app.models import Post
 from random import randint
 # Create your views here.
 def PostListView(request):
-    posts = Post.objects.all()
+    posts = Post.objects.prefetch_related("pictures")
     context = {
         "posts" : posts,
     }
