@@ -4,11 +4,17 @@
 <body>
     <header>
         <div class="left ">
-            <a href="{% url 'random-post'%}" class="btn">Випадкова Публікація</a>
+            <a href="{% url 'main_page'%}" class="btn">Головна</a>
+            <a href="" class="btn">Наш клас</a>
+            <a href="" class="btn">Ми у школі</a>
+            <a href="" class="btn">Для батьків</a>
+            <a href="" class="btn">Наші досягнення</a>
+            <a href="" class="btn">Ми відпочиваємо</a>
         </div>
         <div class="right">
             <a href="{%url 'category_filter'%}?category=1" class="btn">Олімпіади 🏆</a>
             <a href="{%url 'category_filter'%}?category=2" class="btn">Конкурси ⛳</a>
+            <a href="{% url 'random-post'%}" class="btn">Випадкова Публікація</a>
         </div>
     </header>
     {% block content %}

@@ -34,3 +34,6 @@ def RandomPostView(request):
         "posts" : posts,
     }
     return render(request, "school_app/main_page.html",context)
+
+def SearchView(request):
+    return 0
