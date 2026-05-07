@@ -1,20 +1,45 @@
 body {
     font-family: Arial, sans-serif;
-    background-color:rgba(122, 133, 255, 0.1);
+    background-color:#071d3d;
     margin: 0;
     padding: 20px;
+    background-image: url("../images/epic_background.png");
+    background-size: 100%;        /* растягивает на весь экран */
+    background-repeat: no-repeat;  /* убирает повторения */
+    background-position: top;   /* центрирует */
 }
 
 .main_container {
     width: 65%;;
     min-height: 90%;
     margin: 0 auto;
-    background: white;
+    background: #2563EB;
     padding: 20px;
     border-radius: 5px;
 }
 
+.main_main_container {
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.center_img{
+    display: block;
+    margin: 0 auto;
+}
+
+.main_main_container img {
+    
+    max-width: 200px; 
+    height: auto;     
+    display: block;   
+    margin-top: 10px;  
+}
 .post_container {
+    background-color: white;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 15px;
@@ -26,7 +51,7 @@ body {
 }
 
 .post_container img {
-    max-width: 300px; 
+    max-width: 100px; 
     height: auto;     
     display: block;   
     margin-top: 10px;  
