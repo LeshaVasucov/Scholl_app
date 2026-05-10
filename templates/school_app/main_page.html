@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 <body>
     <aside > 
+        <h3>Календар подій</h3>
         <nav> 
             <ul>
                 <li><a href="{%url 'month_filter'%}?month=1">Вересень 🍁</a></li>
@@ -47,12 +48,18 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="last-added">
             <h1>Останнє Доданє:</h1>
                 <div class="post_container">
-                    <p>{{post.title}}</p>
-                    {% for pic in post.pictures.all %}
-                        <img src="{{ pic.pict.url }}" alt="img" class="zoomable">
-                    {% endfor %}
-                    <p>{{post.text}}</p>
-                    <p class="date">{{post.date}}</p>
+                    <div class="post_images">
+                        {% for pic in post.pictures.all %}
+                            <img src="{{ pic.pict.url }}" class="zoomable">
+                        {% endfor %}
+                    </div>
+                    <div class="post_content">
+                        <div class="post_title">{{post.title}}</div>
+                        <div class="post_text">{{post.text}}</div>
+                        <button class="read_more">Читати більше →</button>
+                        <div class="date">{{post.date}}</div>
+                    </div>
+
                 </div>
             </div>
         {% else %}
