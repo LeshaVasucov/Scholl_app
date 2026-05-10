@@ -3,9 +3,9 @@ from school_app.models import Post
 from random import randint
 # Create your views here.
 def PostListView(request):
-    posts = Post.objects.prefetch_related("pictures")
+    last_post = Post.objects.prefetch_related("pictures").order_by('-id').first()
     context = {
-        "posts" : posts,
+        "post": last_post,
     }
     return render(request, "school_app/main_page.html",context)
 
@@ -15,7 +15,7 @@ def PostByMonthView(request):
     context = {
         "posts" : posts,
     }
-    return render(request, "school_app/main_page.html",context)
+    return render(request, "school_app/category.html",context)
 
 def PostByCategoryView(request):
     category = request.GET.get("category")
@@ -23,7 +23,7 @@ def PostByCategoryView(request):
     context = {
         "posts" : posts,
     }
-    return render(request, "school_app/main_page.html",context)
+    return render(request, "school_app/category.html",context)
 
 def RandomPostView(request):
     posts= []
@@ -33,7 +33,7 @@ def RandomPostView(request):
     context = {
         "posts" : posts,
     }
-    return render(request, "school_app/main_page.html",context)
+    return render(request, "school_app/category.html",context)
 
 def SearchView(request):
     return 0

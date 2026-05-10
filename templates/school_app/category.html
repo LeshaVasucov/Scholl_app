@@ -39,13 +39,10 @@ document.addEventListener("DOMContentLoaded", function() {
         </nav>
     </aside>
     <div class="main_container">
-        <div class="main_main_container">
-            <h1>Вітаємо на сторінці нашого "дружнього" класу!!!</h1>
-            <img src="{% static 'Fackt.png' %}" alt="Моя картинка" class="center_img">
-        </div>
-        {%if post%}
-            <div class="last-added">
-            <h1>Останнє Доданє:</h1>
+        {%if posts%}
+            <h1>Публікації:</h1>
+            {% for post in posts %}
+            <div class="last-added">   
                 <div class="post_container">
                     <p>{{post.title}}</p>
                     {% for pic in post.pictures.all %}
@@ -54,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <p>{{post.text}}</p>
                     <p class="date">{{post.date}}</p>
                 </div>
+            {% endfor %}
             </div>
         {% else %}
             <p class="warn_message">Немає публікації</p>

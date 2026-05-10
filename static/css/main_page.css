@@ -19,6 +19,7 @@ body {
 }
 
 .main_main_container {
+    background-color: whitesmoke;
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 5px;
