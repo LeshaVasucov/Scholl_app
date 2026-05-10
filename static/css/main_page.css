@@ -1,12 +1,15 @@
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #071d3d, #0b2a5c);
     margin: 0;
     padding: 0;
-    background-image: url("../images/epic_background.png");
-    background-size: 100%; /* растягивает на весь экран */ 
-    background-repeat: no-repeat; /* убирает повторения */ 
-    background-position: top; /* центрирует */
+
+    background:
+        linear-gradient(135deg, #071d3d, #0b2a5c),
+        url("../images/epic_background.png");
+
+    background-size: cover, cover;
+    background-repeat: no-repeat, no-repeat;
+    background-position: top, top;
 }
 
 /* верхнее меню */
