@@ -28,8 +28,11 @@ def PostByCategoryView(request):
 def RandomPostView(request):
     posts= []
     postl = Post.objects.count()
-    post = Post.objects.get(id=randint(1,postl))
-    posts.append(post)
+    try :
+        post = Post.objects.get(id=randint(1,postl))
+        posts.append(post)
+    except:
+        RandomPostView(request)
     context = {
         "posts" : posts,
     }
